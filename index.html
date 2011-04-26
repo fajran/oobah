@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html><head>
+<!-- The HTML, CSS, and Javascript Code are in Public Domain
+     Conversion rule is from http://www.prides-online.com/showthread.php?t=12031
+-->
+<style type="text/css">
+body { text-align: center; }
+textarea { width: 50%; height: 200px; margin: auto; }
+p { font-weight: bold; }
+button { padding: 10px 20px; }
+</style>
+<script type="text/javascript">
+function reduce() {
+    var input = document.getElementById('input').value;
+    var output = document.getElementById('output');
+
+    // Pertama-tama, huruf X, kita ganti dengan gabungan huruf K dan S
+    // Kebetulan hampir tidak ada kata dalam bahasa Indonesia asli yang
+    // menggunakan huruf ini, kebanyakan merupakan kata serapan dari bahasa
+    // asing. Misalnya taxi menjadi taksi, maximal menjadi maksimal, dst.
+
+    // x => ks
+    input = input.replace(/X/g, 'Ks');
+    input = input.replace(/x/g, 'ks');
+
+    // Selanjutnya, huruf Q kita ganti dengan KW..
+
+    // q => kw
+    input = input.replace(/Q/g, 'Kw');
+    input = input.replace(/q/g, 'kw');
+
+    // Serupa dengan X, kata2 yang mengunakan huruf ini juga sangat sedikit
+    // sekali. Berikutnya, huruf Z. Huruf Z kita ganti menjadi C Tidak ada
+    // alasan kuat tentang hal ini.
+
+    // z => c
+    input = input.replace(/Z/g, 'C');
+    input = input.replace(/z/g, 'c');
+
+    // Huruf Y diganti dengan I. Hal ini dilakukan sebab bunii huruf tersebut
+    // mirip dengan I.
+
+    // y => i
+    input = input.replace(/Y/g, 'I');
+    input = input.replace(/y/g, 'i');
+
+    // Kemudian huruf F dan V keduania diganti menjadi P. Pada lepel ini masih
+    // belum terjadi perubahan iang signipikan.
+
+    // f => p
+    // v => p
+    input = input.replace(/F/g, 'P');
+    input = input.replace(/f/g, 'p');
+    input = input.replace(/V/g, 'P');
+    input = input.replace(/v/g, 'p');
+
+    // Hurup W kemudian diganti menjadi hurup U.
+
+    // w => u
+    input = input.replace(/W/g, 'U');
+    input = input.replace(/w/g, 'u');
+
+    // Berarti sampai saat ini kita sudah mengeliminasi 7 hurup. Hurup iang
+    // bisa kita eliminasi lagi adalah R, mengingat baniak orang iang kesulitan
+    // meniebutkan hurup tersebut. R kita ganti dengan L.
+
+    input = input.replace(/R/g, 'L');
+    input = input.replace(/r/g, 'l');
+
+    // Selanjutnia, gabungan hulup KH diganti menjadi H.
+
+    input = input.replace(/K(h|H)/g, 'H');
+    input = input.replace(/k(h|H)/g, 'h');
+
+    // Iang paling belpengaluh adalah hulup S iang diganti menjadi C.
+
+    input = input.replace(/S/g, 'C');
+    input = input.replace(/s/g, 'c');
+
+    // Hulup G juga diganti menjadi K.
+
+    input = input.replace(/G/g, 'K');
+    input = input.replace(/g/g, 'k');
+
+    // Dan hulup J juga diganti menjadi C. Caia laca cudah cukup untuk
+
+    input = input.replace(/J/g, 'C');
+    input = input.replace(/j/g, 'c');
+
+    // hulup-hulup konconannia.  Cekalank kita kanti hulup pokalnia. Cuma ada
+    // lima hulup pokal, A, I , U, E, O.
+
+    // Kita akan eliminaci dua hulup pokal. Hulup I mencadi dua hulup E iaitu
+    // EE.
+
+    input = input.replace(/I/g, 'Ee');
+    input = input.replace(/i/g, 'ee');
+
+    // Cementala hulup U mencadee dua hulup O eeaeetoo OO. Cadee, campe
+    // cekalank, keeta belhaceel menkulangee hooloop-hooloop keeta. Kalaoo
+    // keeta tooleeckan lagee, Hooloop-hooloop eeang telceeca adalah : A, B, C,
+    // D, E, H, K, L, M, N, O, P, T. Haneea ada 12 belac hooloop !! Looal
+    // beeaca bookan ?? Padahal cebeloomneea keeta pooneea 26 hooloop. Eenee
+    // adalah penemooan eeang cankat penteenk dan cikneepeekan !! Co, ceelahkan
+    // keeleemkan tooleecan anda denkan menkkoonakan dooa belac hooloop
+    // telceboot.
+
+    input = input.replace(/U/g, 'Oo');
+    input = input.replace(/u/g, 'oo');
+
+
+    output.value = input;
+}
+</script>
+</head><body>
+
+<p>Tulisan asli</p>
+<p><textarea id="input"></textarea></p>
+<p><button onclick="reduce()">Ubah</button></p>
+<p>Hasil</p>
+<p><textarea id="output"></textarea></p>
+
+<body></html>
+
+
